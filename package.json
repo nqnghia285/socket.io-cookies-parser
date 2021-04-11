@@ -1,0 +1,35 @@
+{
+    "name": "socket.io-cookies-parser",
+    "version": "1.0.0",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "repository": "https://github.com/nqnghia285/socket.io-cookies-parser.git",
+    "author": "nghia <nqnghia285@gmail.com>",
+    "license": "MIT",
+    "private": false,
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "tsc",
+        "prepare": "yarn build",
+        "version": "yarn format && git add -A src",
+        "postversion": "git push && git push --tags",
+        "git": "git add -A && git commit -m \"Setup Package\" && git push"
+    },
+    "homepage": "https://github.com/nqnghia285/socket.io-cookies-parser.git#readme",
+    "keywords": [
+        "socket.io-cookies-parser",
+        "parser",
+        "cookieParser"
+    ],
+    "files": [
+        "dist"
+    ],
+    "dependencies": {
+        "handle-cookie": "^1.0.1",
+        "socket.io": "^4.0.1"
+    },
+    "devDependencies": {
+        "@types/node": "^14.14.37",
+        "@types/socket.io": "^2.1.13"
+    }
+}
