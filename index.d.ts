@@ -1,8 +1,6 @@
 /// <reference path="index.ts" />
-/// <reference types="socket.io" />
 /// <reference types="handle-cookie" />
 
-import { Socket } from "socket.io";
 import { ExtendedError } from "socket.io/dist/namespace";
 
 /**
@@ -16,4 +14,4 @@ export function parser(socket: any): void;
  * @param socket
  * @param next
  */
-export function cookieParser(socket: Socket, next: (err?: ExtendedError | undefined) => void): void;
+export function cookieParser(socket: any, next: (err?: ExtendedError | undefined) => void): void;

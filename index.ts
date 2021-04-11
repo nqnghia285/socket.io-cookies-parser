@@ -19,8 +19,9 @@ export function parser(socket: any): void {
  * @param socket
  * @param next
  */
-export function cookieParser(socket: Socket, next: (err?: ExtendedError | undefined) => void): void {
-    const req: RequestType = socket.request;
+export function cookieParser(socket: any, next: (err?: ExtendedError | undefined) => void): void {
+    const sk: Socket = socket;
+    const req: RequestType = sk.request;
     const cookies = cookieParse(socket.request.headers.cookie);
     req.cookies = cookies;
     next();
