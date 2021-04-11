@@ -9,7 +9,7 @@ import { ExtendedError } from "socket.io/dist/namespace";
  * @method parser
  * @param socket
  */
-export function parser(socket: Socket): void;
+export function parser(socket: any): void;
 
 /**
  * @method socketIoCookieParser

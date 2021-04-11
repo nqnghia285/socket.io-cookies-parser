@@ -7,8 +7,9 @@ import { cookieParse } from "handle-cookie";
  * @method parser
  * @param socket
  */
-export function parser(socket: Socket): void {
-    const req: RequestType = socket.request;
+export function parser(socket: any): void {
+    const sk: Socket = socket;
+    const req: RequestType = sk.request;
     const cookies = cookieParse(socket.request.headers.cookie);
     req.cookies = cookies;
 }
@@ -18,7 +19,7 @@ export function parser(socket: Socket): void {
  * @param socket
  * @param next
  */
-export default function cookieParser(socket: Socket, next: (err?: ExtendedError | undefined) => void): void {
+export function cookieParser(socket: Socket, next: (err?: ExtendedError | undefined) => void): void {
     const req: RequestType = socket.request;
     const cookies = cookieParse(socket.request.headers.cookie);
     req.cookies = cookies;
