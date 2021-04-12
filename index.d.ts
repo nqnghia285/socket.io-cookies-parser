@@ -1,6 +1,3 @@
-/// <reference path="index.ts" />
-/// <reference types="handle-cookie" />
-
 import { Socket } from "socket.io";
 import { ExtendedError } from "socket.io/dist/namespace";
 
