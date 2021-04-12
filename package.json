@@ -1,6 +1,6 @@
 {
     "name": "socket.io-cookies-parser",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "repository": "https://github.com/nqnghia285/socket.io-cookies-parser.git",
@@ -24,9 +24,9 @@
     "files": [
         "dist"
     ],
-    "dependencies": {
+    "devDependencies": {
         "@types/node": "^14.14.37",
-        "handle-cookie": "^1.0.1",
+        "handle-cookie": "^1.0.3",
         "socket.io": "^4.0.1"
     }
 }
