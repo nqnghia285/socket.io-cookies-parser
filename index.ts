@@ -1,4 +1,3 @@
-import {} from "socket.io";
 import { ExtendedError } from "socket.io/dist/namespace";
 import { RequestType } from "./lib/interface";
 import { cookieParse } from "handle-cookie";
