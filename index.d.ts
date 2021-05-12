@@ -2,14 +2,14 @@ import { Socket } from "socket.io";
 import { ExtendedError } from "socket.io/dist/namespace";
 
 /**
- * @method parser
- * @param socket
+ * @method namespaceCookieParser setup socket midleware for namespace instance
+ * @param socket Socket
  */
-export function parser(socket: Socket): void;
+export declare function namespaceCookieParser(socket: Socket): void;
 
 /**
- * @method socketIoCookieParser
- * @param socket
- * @param next
+ * @method ioCookieParser setup socket midleware for io instance
+ * @param socket Socket
+ * @param next (err?: ExtendedError | undefined) => void
  */
-export function cookieParser(socket: any, next: (err?: ExtendedError | undefined) => void): void;
+export declare function ioCookieParser(socket: Socket, next: (err?: ExtendedError | undefined) => void): void;

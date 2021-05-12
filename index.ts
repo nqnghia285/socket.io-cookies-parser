@@ -4,21 +4,21 @@ import { cookieParse } from "handle-cookie";
 import { Socket } from "socket.io";
 
 /**
- * @method parser
- * @param socket
+ * @method namespaceCookieParser setup socket midleware for namespace instance
+ * @param socket Socket
  */
-export function parser(socket: Socket): void {
+export function namespaceCookieParser(socket: Socket): void {
     const req: RequestType = socket.request;
     const cookies = cookieParse(socket.request.headers.cookie);
     req.cookies = cookies;
 }
 
 /**
- * @method socketIoCookieParser
- * @param socket
- * @param next
+ * @method ioCookieParser setup socket midleware for io instance
+ * @param socket Socket
+ * @param next (err?: ExtendedError | undefined) => void
  */
-export function cookieParser(socket: Socket, next: (err?: ExtendedError | undefined) => void): void {
+export function ioCookieParser(socket: Socket, next: (err?: ExtendedError | undefined) => void): void {
     const req: RequestType = socket.request;
     const cookies = cookieParse(socket.request.headers.cookie);
     req.cookies = cookies;
