@@ -3,14 +3,16 @@ import { RequestType } from "./lib/interface";
 import { cookieParse } from "handle-cookie";
 import { Socket } from "socket.io";
 
+export interface IRequest extends RequestType {}
+
 /**
  * @method namespaceCookieParser setup socket midleware for namespace instance
  * @param socket Socket
  */
 export function namespaceCookieParser(socket: Socket): void {
-    const req: RequestType = socket.request;
-    const cookies = cookieParse(socket.request.headers.cookie);
-    req.cookies = cookies;
+	const req: IRequest = socket.request;
+	const cookies = cookieParse(socket.request.headers.cookie);
+	req.cookies = cookies;
 }
 
 /**
@@ -19,8 +21,8 @@ export function namespaceCookieParser(socket: Socket): void {
  * @param next (err?: ExtendedError | undefined) => void
  */
 export function ioCookieParser(socket: Socket, next: (err?: ExtendedError | undefined) => void): void {
-    const req: RequestType = socket.request;
-    const cookies = cookieParse(socket.request.headers.cookie);
-    req.cookies = cookies;
-    next();
+	const req: IRequest = socket.request;
+	const cookies = cookieParse(socket.request.headers.cookie);
+	req.cookies = cookies;
+	next();
 }
