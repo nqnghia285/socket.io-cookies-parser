@@ -3,7 +3,7 @@ import { RequestType } from "./lib/interface";
 import { cookieParse } from "handle-cookie";
 import { Socket } from "socket.io";
 
-export interface IRequest extends RequestType {}
+export type IRequest = Request | RequestType;
 
 /**
  * @method namespaceCookieParser setup socket midleware for namespace instance

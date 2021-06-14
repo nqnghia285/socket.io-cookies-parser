@@ -1,8 +1,9 @@
 import { Socket } from "socket.io";
 import { ExtendedError } from "socket.io/dist/namespace";
 import { RequestType } from "./lib/interface";
+import { Request } from "express";
 
-export declare interface IRequest extends RequestType {}
+export declare type IRequest = Request | RequestType;
 
 /**
  * @method namespaceCookieParser setup socket midleware for namespace instance
